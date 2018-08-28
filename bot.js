@@ -88,7 +88,7 @@ client.on("message", async message => {
     // slice(1) removes the first part, which here should be the user mention or ID
     // join(' ') takes all the various parts to make it a single string.
     let reason = args.slice(1).join(' ');
-    if(!reason) reason = "**Error:** No reason.";
+    if(!reason) reason = "No reason.";
     
     // Now, time for a swift kick in the nuts!
     await member.kick(reason)
@@ -110,7 +110,7 @@ client.on("message", async message => {
       return message.reply("**Error:** The user mentioned can not be banned.");
 
     let reason = args.slice(1).join(' ');
-    if(!reason) reason = "**Error:** No reason.";
+    if(!reason) reason = "No reason.";
     
     await member.ban(reason)
       .catch(error => message.reply(`Sorry ${message.author} I couldn't ban because of : ${error}`));
